@@ -18,21 +18,23 @@ def register(request):
                         username=request.POST['username'],
                         password=request.POST['password']
                         )
-        return render(request, 'login.html')
+        member.save()
+        return redirect('home')
     else:
-
         return render(request, 'register.html')
 
 
-def login(request):
-    # if Member.objects.filter(username=request.POST['username'], email=request.POST['email'],
-    #                          password=request.POST['password']).exists():
-    #     Member.objects.filter(username=request.POST['username'],
-    #                           email=request.POST['email'],
-    #                           password=request.POST['password'])
-    #     return render(request, 'index.html')
-    # else:
-    return render(request, 'login.html')
+def index(request):
+    if request.method == 'POST':
+        if Member.objects.filter(username=request.POST['username'],
+                                 password=request.POST['password']).exists():
+            Member.objects.filter(username=request.POST['username'],
+                                  password=request.POST['password'])
+            return render(request, 'index.html')
+        else:
+            return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
 
 
 # if request.method == "POST":
@@ -56,8 +58,8 @@ def reset(request):
     return render(request, 'reset.html')
 
 
-def index(request):
-    return render(request, 'index.html')
+def login(request):
+    return render(request, 'login.html')
 
 
 def accommodations(request):
