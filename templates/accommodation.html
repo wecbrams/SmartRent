@@ -94,6 +94,8 @@
                                     <label for="bookingDate">Select Dates:</label>
                                     <input data-provide="datepicker" type="text" class="form-control datepicker" id="bookingDate" placeholder="Select Dates"
                                         required>
+                                    <label for="datepicker-input">dat</label><input type="text" id="datepicker-input" class="form-control" placeholder="Select a date" readonly>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="bookingPrice">Price:</label>
@@ -166,8 +168,65 @@
                 </div>
                 <!-- Add more accommodations as needed -->
             </div>
+</section>
+<!-- Accommodation Listings by Region -->
+<section class="accommodation-listings">
+    <div class="container">
+        <div class="row">
+            <!-- Accommodations in Nairobi -->
+            <div class="col-md-12">
+                <h2 class="section-title">Accommodations in Nairobi</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/nai1.png' %}" class="card-img-top"
+                        alt="Accommodation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Hotel in the Heart of Nairobi</h5>
+                        <p class="card-text">Price: $200/night</p>
+                        <a href="'book_accommodation'" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for accommodations in Nairobi -->
+
+            <!-- Accommodations in Mombasa -->
+            <div class="col-md-12 mt-4">
+                <h2 class="section-title">Accommodations in Mombasa</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/msa.png' %}" class="card-img-top"
+                        alt="Accommodation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Beachfront Resort with Stunning Views</h5>
+                        <p class="card-text">Price: $250/night</p>
+                        <a href="#" class="btn btn-primary">Book Now</a>
+{#                        <a href="{% url 'book_accommodation' accommodation.id %}" class="btn btn-primary">Book Now</a>#}
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for accommodations in Mombasa -->
+
+            <!-- Accommodations in Lamu -->
+            <div class="col-md-12 mt-4">
+                <h2 class="section-title">Accommodations in Lamu</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/lamu.png' %}" class="card-img-top"
+                        alt="Accommodation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Historic Bed and Breakfast in Lamu Town</h5>
+                        <p class="card-text">Price: $180/night</p>
+                        <a href="" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards for accommodations in Lamu -->
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer Section -->
     <footer class="bg-dark text-light">

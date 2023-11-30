@@ -9,9 +9,12 @@
     {% load static  %}
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-grid.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link href="{% static 'css/css.css' %}" rel="stylesheet">
+       <link href="{% static 'css/register.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +23,7 @@
     <header class="bg-light">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'about' %}">
                     <img src="{% static 'assets/img/post-1.jpg' %}" alt="Smart Rent Logo">
                 </a>
             </nav>
@@ -35,7 +38,7 @@
 
       </button>
 
-      <a class="navbar-brand text-brand" href="assets/index.html">Smart<span class="color-b">Rent</span></a>
+      <a class="navbar-brand text-brand" href="{% url 'about' %}">Smart<span class="color-b">Rent</span></a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -45,11 +48,11 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" href="about.html">About</a>
+            <a class="nav-link active" href="{% url 'about' %}">About</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
+            <a class="nav-link " href="{% url 'accommodations' %}">Accommodation</a>
           </li>
 
           <li class="nav-item">
@@ -59,10 +62,10 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">Property Single</a>
-              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
-              <a class="dropdown-item " href="agent-single.html">Agent Single</a>
+              <a class="dropdown-item " href="property-single.html">Locations</a>
+              <a class="dropdown-item " href="blog-single.html">Nairobi</a>
+              <a class="dropdown-item " href="agents-grid.html">Mombasa</a>
+              <a class="dropdown-item " href="agent-single.html">Lamu</a>
             </div>
           </li>
           <li class="nav-item">
@@ -86,7 +89,7 @@
         <div class="container">
             <h1 class="display-4">Explore SmartRent</h1>
             <p class="lead">Revolutionizing travel accommodations for the modern explorer.</p>
-            <a href="#" class="btn btn-primary btn-lg">Explore SmartRent</a>
+            <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Explore SmartRent</a>
         </div>
     </section>
 
@@ -120,7 +123,7 @@
                 <div class="col-md-6 text-right">
                     <!-- Social Media Links -->
                     <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/wecbrams" class="btn btn-outline-light btn-social">Twitter<i class="fab fa-twitter"></i></a>
                     <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -132,10 +135,13 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="{% static 'bootstrap/js/jquery-3.4.0.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 
+    <!-- Bootstrap Datepicker JS
+    <script src="{% static 'js/datepicker.js' %}"></script>
 </body>
 
 </html>
