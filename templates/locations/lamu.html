@@ -252,8 +252,85 @@
                         alt="Accommodation Image">
                     <div class="card-body">
                         <h5 class="card-title">Historic Bed and Breakfast in Lamu Town</h5>
-                        <p class="card-text">Price: $180/night</p>
-                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+                        <form method="post">
+                                {% csrf_token %}
+                                <!-- Date, Price, and Book Now button -->
+                                <div class="form-group date" data-provide="datepicker">
+                                    <label for="bookingDate">Select Dates:</label>
+                                    <input data-provide="datepicker" type="text" class="form-control datepicker" id="bookingDate" placeholder="Select Dates"
+                                        required>
+{#                                    <label for="datepicker-input">dat</label><input type="text" id="datepicker-input" class="form-control" placeholder="Select a date" >#}
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookingPrice">Price:</label>
+                                   <input type="text" class="form-control" id="bookingPrice" value="$12.0/night"
+                                        readonly>
+
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block"><a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+</button>
+                            </form>
+{#                        <p class="card-text">Price: $180/night</p>#}
+{#                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>#}
+
+                    </div>
+                </div><div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/slide-2.jpg' %}" class="card-img-top"
+                        alt="Accommodation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Historic Bed and Breakfast in Lamu Town</h5>
+                        <form method="post">
+                                {% csrf_token %}
+                                <!-- Date, Price, and Book Now button -->
+                                <div class="form-group date" data-provide="datepicker">
+                                    <label for="bookingDate">Select Dates:</label>
+                                    <input data-provide="datepicker" type="text" class="form-control datepicker" id="bookingDate" placeholder="Select Dates"
+                                        required>
+{#                                    <label for="datepicker-input">dat</label><input type="text" id="datepicker-input" class="form-control" placeholder="Select a date" >#}
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookingPrice">Price:</label>
+                                   <input type="text" class="form-control" id="bookingPrice" value="$12.0/night"
+                                        readonly>
+
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block"><a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+</button>
+                            </form>
+{#                        <p class="card-text">Price: $180/night</p>#}
+{#                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>#}
+
+                    </div>
+                </div><div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'assets/img/slide-about-1.jpg' %}" class="card-img-top"
+                        alt="Accommodation Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Historic Bed and Breakfast in Lamu Town</h5>
+                        <form method="post">
+                                {% csrf_token %}
+                                <!-- Date, Price, and Book Now button -->
+                                <div class="form-group date" data-provide="datepicker">
+                                    <label for="bookingDate">Select Dates:</label>
+                                    <input data-provide="datepicker" type="text" class="form-control datepicker" id="bookingDate" placeholder="Select Dates"
+                                        required>
+{#                                    <label for="datepicker-input">dat</label><input type="text" id="datepicker-input" class="form-control" placeholder="Select a date" >#}
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookingPrice">Price:</label>
+                                   <input type="text" class="form-control" id="bookingPrice" value="$12.0/night"
+                                        readonly>
+
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block"><a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+</button>
+                            </form>
+{#                        <p class="card-text">Price: $180/night</p>#}
+{#                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>#}
 
                     </div>
                 </div>
@@ -287,7 +364,8 @@
 
         <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="{% static 'bootstrap/js/jquery-3.4.0.js' %}"></script>
-    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></
+                        <a href="{% url 'book_accommodation' accommodation_id=2 %}" class="btn btn-primary">Book Now</a>script>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 
     <!-- Bootstrap Datepicker JS (Make sure this comes after Bootstrap and jQuery) -->

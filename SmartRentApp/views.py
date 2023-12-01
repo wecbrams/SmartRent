@@ -3,7 +3,7 @@ from datetime import timezone
 from django.utils import timezone
 
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from SmartRentApp.models import Booking, Accommodation, Member
 from decimal import Decimal
@@ -70,7 +70,8 @@ def accommodations(request):
 
 @login_required
 def book_accommodation(request, accommodation_id):
-    accommodation = Accommodation.objects.get(pk=accommodation_id)
+    accommodation = get_object_or_404(Accommodation, pk=accommodation_id)
+    # accommodation = Accommodation.objects.get(pk=accommodation_id)
     commission_percentage = Decimal('0.45')  # Ensure commission_percentage is a Decimal
     commission = accommodation.price * commission_percentage
 
