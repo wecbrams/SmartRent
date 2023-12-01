@@ -53,9 +53,9 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="{% url 'accommodations' %}">Accommodation</a>
-          </li>
+{#          <li class="nav-item">#}
+{#            <a class="nav-link " href="{% url 'accommodations' %}">Accommodation</a>#}
+{#          </li>#}
 
           <li class="nav-item">
             <a class="nav-link " href="{% url 'blog' %}">Blog</a>
@@ -73,12 +73,12 @@
           <li class="nav-item">
             <a class="nav-link " href="{% url 'contact' %}">Contact</a>
           </li>
-{#            <li class="nav-item">#}
-{#            <a class="nav-link " href="{% url 'login' %}">Login</a>#}
-{#          </li>#}
-{#            <li class="nav-item">#}
-{#                <a class="nav-link " href="{% url 'register' %}">Sign Up</a>#}
-{#          </li>#}
+            <li class="nav-item">
+            <a class="nav-link " href="{% url 'login' %}">Login</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link " href="{% url 'register' %}">Sign Up</a>
+          </li>
         </ul>
       </div>
      </div>
@@ -92,6 +92,62 @@
             <h1 class="display-4">Explore SmartRent</h1>
             <p class="lead">Revolutionizing travel accommodations for the modern explorer.</p>
             <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Explore SmartRent</a>
+        </div>
+    </section>
+
+       <!-- Blog Section -->
+    <section class="blog-section bg-info text-dark-emphasis">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <!-- Blog Post Content -->
+                    <article>
+                        <h2>Discover SmartRent: A Revolutionary Cross-City Accommodation Platform</h2>
+                        <p>Welcome to the future of travel accommodations with <strong>SmartRent</strong>, an innovative
+                            web application designed to reshape the way we approach lodging. In a world where flexibility,
+                            cost-effectiveness, and user-friendly experiences are paramount, SmartRent emerges as a
+                            game-changer for modern travelers.</p>
+
+                        <h3>Redefining Travel Accommodations</h3>
+                        <p>SmartRent addresses the challenges faced by contemporary adventurers seeking flexibility and
+                            affordable options in their lodging choices. Traditional platforms often constrain users with
+                            rigid booking structures, making it difficult to adapt to changing plans. SmartRent's primary
+                            goal is to empower users to book accommodations seamlessly in one city and transition
+                            effortlessly to another city without the hassle of canceling and rebooking.</p>
+
+                        <h3>Intuitive User Interface</h3>
+                        <p>At the heart of SmartRent's appeal is its intuitive and user-friendly interface. Initiating a
+                            journey is a breeze as users can effortlessly select and book a room in their current city of
+                            residence. What sets SmartRent apart is its unique selling point: the ability to transition to
+                            a different city without canceling the existing reservation. This is made possible with a
+                            dynamic pricing model, allowing users to pay only 45% of the original booking amount.
+                            SmartRent encourages spontaneity in travel plans while ensuring affordability remains a key
+                            feature.</p>
+
+                        <h3>Dynamic Pricing Model</h3>
+                        <p>The dynamic pricing model is a game-changer. Plans change, and SmartRent adapts. Whether you
+                            decide to explore another city for business or leisure, SmartRent ensures a smooth transition
+                            without breaking the bank. This flexibility encourages users to embrace spontaneity and
+                            redefine their travel experiences.</p>
+
+                        <h3>Real-Time Availability Updates</h3>
+                        <p>Stay in the know with SmartRent's real-time availability updates. Whether you're a meticulous
+                            planner or a spontaneous adventurer, SmartRent caters to diverse needs with a comprehensive
+                            and up-to-date database of available accommodations. Say goodbye to uncertainties and hello to
+                            a seamless booking experience.</p>
+
+                        <h3>SmartRent: The Go-To Solution</h3>
+                        <p>In a crowded space of travel accommodation platforms, SmartRent stands out by seamlessly
+                            combining flexibility, affordability, and user convenience. As the world emphasizes
+                            adaptability, SmartRent emerges as the go-to solution for travelers who demand more from
+                            their accommodation platforms.</p>
+
+                        <p>Embrace the future of travel with SmartRent — where your journey is as flexible as you are.
+                            Explore new horizons, redefine your travel plans, and experience accommodations like never
+                            before. SmartRent: Changing the way you stay, one city at a time.</p>
+                    </article>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -142,7 +198,7 @@
     <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 
-    <!-- Bootstrap Datepicker JS
+    <!-- Bootstrap Datepicker JS-->
     <script src="{% static 'js/datepicker.js' %}"></script>
 </body>
 

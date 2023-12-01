@@ -14,10 +14,76 @@
     rel="stylesheet">
 
     <!-- Custom Styles -->
-    <link href="#" rel="stylesheet">
+        <link href="{% static 'css/register.css' %}" rel="stylesheet">
+       <link href="{% static 'css/style.css' %}" rel="stylesheet">
+       <link href="{% static 'css/custom.css' %}" rel="stylesheet">
 </head>
 
 <body>
+
+    <!-- Header Section -->
+    <header class="bg-light">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{% url 'about' %}">
+                    <img src="{% static 'assets/img/post-1.jpg' %}" alt="Smart Rent Logo">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+
+    <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+    <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon nav-justified"></span>
+
+      </button>
+
+      <a class="navbar-brand text-brand" href="{% url 'about' %}">Smart<span class="color-b">Rent</span></a>
+
+      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link " href="">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'accommodations' %}">Accommodation</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'blog' %}">Blog</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locations</a>
+            <div class="dropdown-menu">
+{#              <a class="dropdown-item " href="property-single.html">Locations</a>#}
+              <a class="dropdown-item " href="{% url 'nairobi' %}">Nairobi</a>
+              <a class="dropdown-item " href="{% url 'mombasa' %}">Mombasa</a>
+              <a class="dropdown-item " href="{% url 'lamu' %}">Lamu</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'contact' %}">Contact</a>
+          </li>
+{#            <li class="nav-item">#}
+{#            <a class="nav-link " href="{% url 'login' %}">Login</a>#}
+{#          </li>#}
+{#            <li class="nav-item">#}
+{#                <a class="nav-link " href="{% url 'register' %}">Sign Up</a>#}
+{#          </li>#}
+        </ul>
+      </div>
+     </div>
+    </nav>
+
 
     <!-- Header Section -->
     <header class="bg-light">
@@ -32,17 +98,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Accommodations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log In</a>
+                            <a class="nav-link active text-danger" href="#">Accommodations</a>
                         </li>
                     </ul>
                 </div>
@@ -74,9 +131,8 @@
                     </div>
                     <!-- Accommodation Name, Description, Features -->
                     <h2 class="mt-4">Luxury Apartment</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod turpis
-                        augue, id
-                        tincidunt ante varius ac.</p>
+                    <p class="lead">Experience the luxury of this beautiful apartment, situated in a prime location with stunning views. The modern amenities and stylish decor create a perfect blend of comfort and elegance, making it an ideal choice for your stay.</p>
+
                     <ul>
                         <li>Feature 1</li>
                         <li>Feature 2</li>
@@ -108,7 +164,8 @@
                                         <!-- Add more pricing options as needed -->
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Book Now</button>
+                                <button type="submit" class="btn btn-primary btn-block"><a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+</button>
                             </form>
                         </div>
                     </div>
@@ -150,7 +207,9 @@
                             <p class="card-text">Quaint cottage with a scenic view. Perfect for a peaceful
                                 getaway.</p>
                             <p class="card-text">Features: Fireplace, Garden View</p>
-                            <a href="#" class="btn btn-primary">$120/night</a>
+                            <button class="btn btn-primary">$120/night</button>
+                            <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+
                         </div>
                     </div>
                 </div>
@@ -162,7 +221,8 @@
                             <p class="card-text">Contemporary loft with city skyline views. Ideal for urban
                                 explorers.</p>
                             <p class="card-text">Features: Loft Space, City View</p>
-                            <a href="#" class="btn btn-primary">$180/night</a>
+                            <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+
                         </div>
                     </div>
                 </div>
@@ -184,7 +244,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Luxury Hotel in the Heart of Nairobi</h5>
                         <p class="card-text">Price: $200/night</p>
-                        <a href="'book_accommodation'" class="btn btn-primary">Book Now</a>
+                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+
                     </div>
                 </div>
             </div>
@@ -201,7 +262,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Beachfront Resort with Stunning Views</h5>
                         <p class="card-text">Price: $250/night</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
+                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+
 {#                        <a href="{% url 'book_accommodation' accommodation.id %}" class="btn btn-primary">Book Now</a>#}
                     </div>
                 </div>
@@ -219,7 +281,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Historic Bed and Breakfast in Lamu Town</h5>
                         <p class="card-text">Price: $180/night</p>
-                        <a href="" class="btn btn-primary">Book Now</a>
+                        <a href="{% url 'book_accommodation' accommodation_id=1 %}" class="btn btn-primary">Book Now</a>
+
                     </div>
                 </div>
             </div>
@@ -233,12 +296,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p mailto="wecbrams@gmail.com">Contact us at: info@smartrent.com</p>
+                    <p mailto="wecbrams@gmail.com">Contact us at: wec.bram@gmail.com</p>
                 </div>
                 <div class="col-md-6 text-right">
                     <!-- Social Media Links -->
                     <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/wecbrams" class="btn btn-outline-light btn-social">Twitter<i class="fab fa-twitter"></i></a>
                     <a href="#" class="btn btn-outline-light btn-social"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>

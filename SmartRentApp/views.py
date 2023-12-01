@@ -1,3 +1,4 @@
+from _curses import echo
 from datetime import timezone
 from django.utils import timezone
 
@@ -5,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from SmartRentApp.models import Booking, Accommodation, Member
+from decimal import Decimal
 
 
 # Create your views here.
@@ -19,7 +21,7 @@ def register(request):
                         password=request.POST['password']
                         )
         member.save()
-        return redirect('home')
+        return redirect('login')
     else:
         return render(request, 'register.html')
 
@@ -66,10 +68,10 @@ def accommodations(request):
     return render(request, 'accommodation.html')
 
 
-# @login_required
+@login_required
 def book_accommodation(request, accommodation_id):
     accommodation = Accommodation.objects.get(pk=accommodation_id)
-    commission_percentage = 0.45
+    commission_percentage = Decimal('0.45')  # Ensure commission_percentage is a Decimal
     commission = accommodation.price * commission_percentage
 
     # Save booking information
@@ -80,6 +82,7 @@ def book_accommodation(request, accommodation_id):
         commission=commission,
         expiration_time=expiration_time
     )
+    booking.save()
 
     # Redirect to a success page or handle further actions
     return redirect('booking_success')
@@ -92,3 +95,27 @@ def booking_success(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def blog(request):
+    return render(request, 'blog.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
+def nairobi(request):
+    return render(request, 'locations/nairobi.html')
+
+
+def lamu(request):
+    return render(request, 'locations/lamu.html')
+
+
+def mombasa(request):
+    return render(request, 'locations/mombasa.html')
+
+
+def index0(request):
+    return render(request, 'index0.html')
